@@ -17,9 +17,9 @@ TransVert
 TransFor
 */
  
-var rollSpeed : float = 600.0; //rolling rotation speed
-var pitchSpeed : float = 600.0; //vertical rotation speed
-var yawSpeed : float = 600.0; //horizontal rotation speed
+var rollSpeed : float = 500.0; //rolling rotation speed
+var pitchSpeed : float = 500.0; //vertical rotation speed
+var yawSpeed : float = 500.0; //horizontal rotation speed
  
 var accelerate : float = 600.0; //main engine thrust
  
@@ -48,6 +48,7 @@ function FixedUpdate(){
         //iTransZ *= Time.fixedDeltaTime;
  
         rigidbody.AddRelativeForce(0,0,thrust); //main thrusters
+        
         //rigidbody.AddRelativeForce(iTransX, iTransY, iTransZ); //any maneuvering thruster bursts
         rigidbody.AddRelativeTorque(pitch2, yaw, roll); //any rotation thruster bursts
  
@@ -70,6 +71,7 @@ function FixedUpdate(){
             {
                 rigidbody.angularDrag = 0.0;
                 rigidbody.drag = 0.0;
+                
                 dragOn = false;
             }
         }
